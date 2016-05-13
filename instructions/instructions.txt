@@ -1,0 +1,2 @@
+mvn clean install
+java -cp target/javafx-1.0-SNAPSHOT.jar com.onlineinteract.samples.HelloWorldMain
