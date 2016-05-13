@@ -25,6 +25,8 @@ public class HelloWorldMain extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("Hello World");
+//		primaryStage.initStyle(StageStyle.UNDECORATED);
+//		primaryStage.setAlwaysOnTop(true);
 		Group root = new Group();
 		Scene scene = new Scene(root, 300, 250);
 		Button btn = new Button();
