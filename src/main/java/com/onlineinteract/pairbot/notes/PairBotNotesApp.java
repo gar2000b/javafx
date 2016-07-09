@@ -1,4 +1,4 @@
-package com.onlineinteract.samples;
+package com.onlineinteract.pairbot.notes;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -9,11 +9,14 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import com.onlineinteract.pairbot.notes.dto.MonitorDimensions;
+import com.onlineinteract.pairbot.notes.utility.MonitorUtility;
+
 /**
  * 
  * @author Gary Black
  */
-public class HelloWorldMain extends Application {
+public class PairBotNotesApp extends Application {
 
 	/**
 	 * @param args
@@ -25,11 +28,21 @@ public class HelloWorldMain extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
+
+		MonitorDimensions primaryMonitorDimensions = MonitorUtility
+				.getPrimaryMonitorDimensions();
+		primaryMonitorDimensions.reduceResolutionBy(100);
+		primaryMonitorDimensions.printDimensions();
+
 		primaryStage.setTitle("Hello World");
 		primaryStage.initStyle(StageStyle.UNDECORATED);
 		primaryStage.setAlwaysOnTop(true);
+		primaryStage.setWidth(primaryMonitorDimensions.getWidth());
+		primaryStage.setHeight(primaryMonitorDimensions.getHeight());
+
 		Group root = new Group();
-		Scene scene = new Scene(root, 300, 250);
+		Scene scene = new Scene(root, primaryMonitorDimensions.getWidth(),
+				primaryMonitorDimensions.getHeight());
 		Button btn = new Button();
 		btn.setLayoutX(100);
 		btn.setLayoutY(80);

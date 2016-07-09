@@ -70,7 +70,7 @@
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 						<manifest>
-							<mainClass>com.onlineinteract.samples.HelloWorldMain</mainClass>
+							<mainClass>com.onlineinteract.pairbot.notes.PairBotNotesApp</mainClass>
 						</manifest>
 					</archive>
 
